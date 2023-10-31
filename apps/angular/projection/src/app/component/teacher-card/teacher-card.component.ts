@@ -13,7 +13,9 @@ import { CardComponent } from '../../ui/card/card.component';
   template: `<app-card
     [list]="teachers"
     [type]="cardType"
-    customClass="bg-light-red">
+    customClass="bg-light-red"
+    (addItem)="onAddItem()"
+    (deleteItem)="onDeleteItem($event)">
     <img head-img src="assets/img/teacher.png" width="200px" />
   </app-card>`,
   standalone: true,
@@ -33,5 +35,9 @@ export class TeacherCardComponent implements OnInit {
 
   onAddItem() {
     this.store.addOne(randTeacher());
+  }
+
+  onDeleteItem(itemId: number) {
+    this.store.deleteOne(itemId);
   }
 }

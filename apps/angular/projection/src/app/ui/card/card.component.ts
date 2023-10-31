@@ -17,6 +17,7 @@ export class CardComponent {
   @Input() type!: CardType;
   @Input() customClass = '';
   @Output() addItem = new EventEmitter();
+  @Output() deleteItem = new EventEmitter<number>();
 
   CardType = CardType;
 

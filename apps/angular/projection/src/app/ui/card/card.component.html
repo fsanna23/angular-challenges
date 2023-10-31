@@ -9,7 +9,8 @@
       *ngFor="let item of list"
       [name]="item.firstname"
       [id]="item.id"
-      [type]="type">
+      [type]="type"
+    (delete)="deleteItem.emit(item.id)">
     </app-list-item>
   </section>
 
